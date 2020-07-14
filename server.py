@@ -34,8 +34,8 @@ class SSLWebServer(ServerAdapter):
         """
         Runs a CherryPy Server using the SSL certificate.
         """
-        from cherrypy import wsgiserver
-        from cherrypy.wsgiserver.ssl_pyopenssl import pyOpenSSLAdapter
+        from cheroot.wsgi import Server as CherryPyWSGIServer
+        from cheroot.ssl.pyopenssl import pyOpenSSLAdapter
 
         server = wsgiserver.CherryPyWSGIServer((self.host, self.port), handler)
 
